@@ -28,12 +28,12 @@ sql_stuff = 'INSERT INTO "MAE_USUARIOS" VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)'
 cur.execute(sql_stuff,tup)
 con.commit()
 
-tup = [	("estado_usuario", "Estados de usuario del sistema"),("estado_documento", "Estados de documento"),("estado_password_mayus", "Estado del flag de mayuscula para el password"),("estado_password_num", "Estado del flag de numero para el password"),("estado_password_carac", "Estado del flag de caracteres especiales para el password"),("longitud_pass", "longitud minima del password") ]
+tup = [	("estado_usuario", "Estados de usuario del sistema"),("estado_documento", "Estados de documento"),("estado_password_mayus", "Estado del flag de mayuscula para el password"),("estado_password_num", "Estado del flag de numero para el password"),("estado_password_carac", "Estado del flag de caracteres especiales para el password"),("longitud_pass", "longitud minima del password"), ("estado_token", "duracion maxima del token")]
 sql_stuff = 'INSERT INTO "PARAM_GRUPO" (grupo_codigo,grupo_nombre) VALUES (%s,%s)'
 cur.executemany(sql_stuff,tup)
 con.commit()
 
-tup = [	("estado_usuario", "A", "Activo"),("estado_usuario", "D", "Desactivado"),("estado_usuario", "E", "Eliminado"),("estado_password_mayus", "A+1", "EA Activo / D Desactivado + numero minimo"),("estado_password_num", "A+1", "A Activo / D Desactivado + numero minimo"),("estado_password_carac", "A+1", "A Activo / D Desactivado + numero minimo"),("longitud_pass", "12", "Longitud de la cadena"), ]
+tup = [	("estado_usuario", "A", "Activo"),("estado_usuario", "D", "Desactivado"),("estado_usuario", "E", "Eliminado"),("estado_password_mayus", "A+1", "EA Activo / D Desactivado + numero minimo"),("estado_password_num", "A+1", "A Activo / D Desactivado + numero minimo"),("estado_password_carac", "A+1", "A Activo / D Desactivado + numero minimo"),("longitud_pass", "12", "Longitud de la cadena"), ("estado_token", "51", "Los minutos que el token se mantiene activo")]
 sql_stuff = 'INSERT INTO "PARAM" (param_grupo,param_id,param_valor) VALUES (%s,%s,%s)'
 cur.executemany(sql_stuff,tup)
 con.commit()
