@@ -39,7 +39,8 @@ cur.executemany(sql_stuff,tup)
 con.commit()
 
 insert_menu = ('INSERT INTO "TAB_MENU" (menu_desc,menu_name,menu_ord) VALUES (%s,%s,%s)')
-data_menu = [('Permiso para tipo de usuario','Tipo Usuario',2),
+data_menu = [
+('Permiso para tipo de usuario','Tipo Usuario',2),
 ('Permiso para crons','Cron',14),
 ('Permiso para Tipo de objetos','Tipo Objeto',11),
 ('Permiso para ejecuciones','Ejecuciones',22),
