@@ -40,9 +40,9 @@ con.commit()
 
 insert_menu = ('INSERT INTO "TAB_MENU" (menu_desc,menu_name,menu_key,menu_padre,menu_ruta,menu_cssclass,menu_ord) VALUES (%s,%s,%s,%s,%s,%s,%s)')
 data_menu = [
-('Menu Padre Documentacion','Documentacion','MN_DOC',int(),'','fa-book',2),
-('Menu padre Logs','Logs','MN_LOG',int(),'','fa-newspaper',3),
-('Menu Padre Administracion','Administracion','MN_ADMIN',int(),'','fa-cog',1),
+('Menu Padre Documentacion','Documentacion','MN_DOC',None,'','fa-book',2),
+('Menu padre Logs','Logs','MN_LOG',None,'','fa-newspaper',3),
+('Menu Padre Administracion','Administracion','MN_ADMIN',None,'','fa-cog',1),
 ('Permiso para accesos a reportes','Usuario Acceso Reportes','MN_USUREP',3,'usu-rep','',6),
 ('Permiso para alertas a usuarios','Usuario Alertas','MN_USUALER',3,'usu-aler','',5),
 ('Permiso para accesos a arboles','Usuario Acceso Arboles','MN_USUARB',3,'usu-arb','',4),
