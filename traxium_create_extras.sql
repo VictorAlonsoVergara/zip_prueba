@@ -292,12 +292,12 @@ BEGIN
 	END IF;
 END $$;
 
-create or replace view view_crons_consultas_objetos as
-select cron.cron_id,cons.con_trama_pregunta,
-		prot.prot_abreviacion,obj.obj_id,obj.obj_ip_address,obj.obj_usuario,obj.obj_password
-from "MAE_CRON" as cron 
-join "MAE_OBJETOS" as obj on obj.tobj_id = cron.tobj_id and obj.prot_id = cron.prot_id
-join "MAE_CONSULTAS" as cons on cons.prot_id = cron.prot_id and cons.mod_id = obj.mod_id
-join "TAB_PROTOCOLO" as prot on prot.prot_id = cron.prot_id
-where cron.cron_estado = 'A' and obj.obj_estado = 'A'
-order by cron.cron_id,cons.con_id,obj.obj_id;
+--create or replace view view_crons_consultas_objetos as
+--select cron.cron_id,cons.con_trama_pregunta,
+--		prot.prot_abreviacion,obj.obj_id,obj.obj_ip_address,obj.obj_usuario,obj.obj_password
+--from "MAE_CRON" as cron 
+--join "MAE_OBJETOS" as obj on obj.tobj_id = cron.tobj_id and obj.prot_id = cron.prot_id
+--join "MAE_CONSULTAS" as cons on cons.prot_id = cron.prot_id and cons.mod_id = obj.mod_id
+--join "TAB_PROTOCOLO" as prot on prot.prot_id = cron.prot_id
+--where cron.cron_estado = 'A' and obj.obj_estado = 'A'
+--order by cron.cron_id,cons.con_id,obj.obj_id;
