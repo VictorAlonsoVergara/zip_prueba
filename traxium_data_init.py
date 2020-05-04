@@ -40,9 +40,9 @@ con.commit()
 
 insert_menu = ('INSERT INTO "TAB_MENU" (menu_desc,menu_name,menu_key,menu_padre,menu_ruta,menu_cssclass,menu_ord) VALUES (%s,%s,%s,%s,%s,%s,%s)')
 data_menu = [
-('Menu Padre Documentacion','Documentacion','MN_DOC',,'','fa-book',2),
-('Menu padre Logs','Logs','MN_LOG',,'','fa-newspaper',3),
-('Menu Padre Administracion','Administracion','MN_ADMIN',,'','fa-cog',1),
+('Menu Padre Documentacion','Documentacion','MN_DOC',int(),'','fa-book',2),
+('Menu padre Logs','Logs','MN_LOG',int(),'','fa-newspaper',3),
+('Menu Padre Administracion','Administracion','MN_ADMIN',int(),'','fa-cog',1),
 ('Permiso para accesos a reportes','Usuario Acceso Reportes','MN_USUREP',3,'usu-rep','',6),
 ('Permiso para alertas a usuarios','Usuario Alertas','MN_USUALER',3,'usu-aler','',5),
 ('Permiso para accesos a arboles','Usuario Acceso Arboles','MN_USUARB',3,'usu-arb','',4),
@@ -88,7 +88,7 @@ data_prot = [('SNMP','S'),('SSH','H'),('Telnet','T'),('TR01','0')]
 cur.executemany(insert_prot,data_prot)
 con.commit()
 
-insert_error = ('INSERT INTO "TAB_ERROR" (cod_error,idi_id,mensaje) VALUES (%s,%s)')
+insert_error = ('INSERT INTO "TAB_ERROR" (cod_error,idi_id,mensaje) VALUES (%s,%s,%s)')
 data_error = [(50,1,'python error'),(50,2,'python error'),(51,1,'metodo incorrecto'),(51,2,'wrong method'),(52,1,'Error'),(52,2,'Error'),(60,1,'Error psql'),(60,2,'Error psql'),(100,1,'token expirado'),(100,2,'token expired'),(101,1,'ip incorrecto'),(101,2,'ip incorrect'),(102,1,'tipo de dato incorrecto'),(102,2,'wrong data type'),(103,1,'no guarda en el log de acciones'),(103,2,'does not save in the action log'),(104,1,'validacion incorrecta'),(104,2,'incorrect validation'),(105,1,'no existe dato'),(105,2,'data does not exist')]
 cur.executemany(insert_error,data_error)
 con.commit()
