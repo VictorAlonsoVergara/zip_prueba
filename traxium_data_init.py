@@ -38,32 +38,37 @@ sql_stuff = 'INSERT INTO "PARAM" (param_grupo,param_id,param_valor) VALUES (%s,%
 cur.executemany(sql_stuff,tup)
 con.commit()
 
-insert_menu = ('INSERT INTO "TAB_MENU" (menu_desc,menu_name,menu_ord) VALUES (%s,%s,%s)')
+insert_menu = ('INSERT INTO "TAB_MENU" (menu_desc,menu_name,menu_key,menu_padre,menu_ruta,menu_cssclass,menu_ord) VALUES (%s,%s,%s,%s,%s,%s,%s)')
 data_menu = [
-('Permiso para tipo de usuario','Tipo Usuario',2),
-('Permiso para crons','Cron',14),
-('Permiso para Tipo de objetos','Tipo Objeto',11),
-('Permiso para ejecuciones','Ejecuciones',22),
-('Permiso para consultas','Consultas',17),
-('Permiso para reportes','Reportes',20),
-('Permiso para objetos','Objetos',12),
-('Permiso para accesos a reportes','Usuario Acceso Reportes',6),
-('Permiso para alertas de usuario','Usuario Alertas',5),
-('Permiso para acceso de arboles','Usuario Acceso ArboLes',7),
-('Permiso para arboles fisicos','Arboles Fisicos',18),
-('Permiso para arboles logicos','Arboles Logicos',19),
-('Permiso para objetos fisicos','Objetos Fisicos',23),
-('Permiso para objetos logicos','Objetos Logicos',24),
-('Permiso para marcas','Marcas',13),
-('Permiso para area','Areas',10),
-('Permiso para idiomas','Idiomas',8),
-('Permios para modelos','Modelos',15),
-('Permiso para menu de usuarios','Usuarios Menu',3),
-('Permiso para menus','Menu',9),
-('Permiso para protocolos','Protocolos',16),
-('Permiso para acciones','Acciones',21),
-('Permiso para acciones de usuarios','Acciones usuario', 4),
-('Permiso para usuarios','Usuarios',1)]
+('Menu Padre Documentacion','Documentacion','MN_DOC',,,'fa-book',2),
+('Menu padre Logs','Logs','MN_LOG',,,'fa-newspaper',3),
+('Menu Padre Administracion','Administracion','MN_ADMIN',,,'fa-cog',1),
+('Permiso para accesos a reportes','Usuario Acceso Reportes','MN_USUREP',3,'usu-rep',,6),
+('Permiso para alertas a usuarios','Usuario Alertas','MN_USUALER',3,'usu-aler',,5),
+('Permiso para accesos a arboles','Usuario Acceso Arboles','MN_USUARB',3,'usu-arb',,4),
+('Permiso para arboles fisicos','Arboles Fisicos','MN_ARBFIS',3,'arbfis',,15),
+('Permiso para arboles logicos','Arboles Logicos','MN_ARBLOG',3,'arblog',,16),
+('Permiso para objetos fisicos','Objetos Fisicos','MN_OBJFIS',3,'obj-fis',,18),
+('Permiso para objetos logicos','Objetos Logicos','MN_OBJLOG',3,'obj-log',,19),
+('Permiso para marcas','Marcas','MN_MARCA',3,'marca',,8),
+('Permiso para area','Areas','MN_AREA',3,'areas',,14),
+('Permiso para idiomas','Idiomas','MN_IDI',3,'idiomas',,13),
+('Permiso para modelos','Modelos','MN_MOD',3,'modelo',,9),
+('Permiso para menu de usuarios','Usuarios Menu','MN_USUMEN',3,'usu-menu',,3),
+('Permiso para menus',',Menu','MN_MEN',3,'menu',,22),
+('Permiso para protocolos','Protocolos','MN_PROT',3,'protocolo',,10),
+('Permiso para acciones','Acciones','MN_ACC',3,'acciones',,21),
+('Permiso para acciones de usuarios','Acciones usuario','MN_USUACC',2,'usu-acc',,23),
+('Permiso para usuarios','Usuarios','MN_USU',3,'user',,1),
+('Permiso para servers pull','Servers Pull','MN_SVPULL',3,'svpull',,25),
+('Permiso para tipo de usuario','Tipo Usuario','MN_TPUS',3,'tpuser',,2),
+('Permiso para crons','Cron','MN_CRON',3,'cron',,17),
+('Permiso para Tipo de objetos','Tipo Objeto','MN_TPOBJ',3,'tpobj',,7),
+('Permiso para ejecuciones','Ejecuciones','MN_EJEC',3,'ejecuciones',,24),
+('Permiso para consultas','Consultas','MN_CONS',3,'consulta',,12),
+('Permiso para reportes','Reportes','MN_REP',3,'reporte',,20),
+('Permiso para objetos','Objetos','MN_OBJ',3,'objeto',,11)
+]
 
 cur.executemany(insert_menu,data_menu)
 con.commit()
@@ -81,6 +86,11 @@ con.commit()
 insert_prot = ('INSERT INTO "TAB_PROTOCOLO" (prot_desc,prot_abreviacion) VALUES (%s,%s)')
 data_prot = [('SNMP','S'),('SSH','H'),('Telnet','T'),('TR01','0')]
 cur.executemany(insert_prot,data_prot)
+con.commit()
+
+insert_error = ('INSERT INTO "TAB_ERROR" (cod_error,idi_id,mensaje) VALUES (%s,%s)')
+data_error = [(50,1,'python error'),(50,2,'python error'),(51,1,'metodo incorrecto'),(51,2,'wrong method'),(52,1,'Error'),(52,2,'Error'),(60,1,'Error psql'),(60,2,'Error psql'),(100,1,'token expirado'),(100,2,'token expired'),(101,1,'ip incorrecto'),(101,2,'ip incorrect'),(102,1,'tipo de dato incorrecto'),(102,2,'wrong data type'),(103,1,'no guarda en el log de acciones'),(103,2,'does not save in the action log'),(104,1,'validacion incorrecta'),(104,2,'incorrect validation'),(105,1,'no existe dato'),(105,2,'data does not exist')]
+cur.executemany(insert_error,data_error)
 con.commit()
 
 tup = [	("Ver usuario",),("Listar usuario",),("Crear usuario",),("Modificar usuario",),("Borrar usuario",),("Autenticar usuario",),("Cerrar usuario",),("Desactivar usuario",),("Activar usuario",),("Eliminar usuario",),
