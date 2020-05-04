@@ -15,6 +15,7 @@
 
 -- object: public."MAE_OBJETOS" | type: TABLE --
 DROP TABLE IF EXISTS public."MAE_OBJETOS" CASCADE;
+TRUNCATE TABLE public."MAE_OBJETOS" RESTART IDENTITY CASCADE;
 CREATE TABLE public."MAE_OBJETOS"(
 	obj_id serial NOT NULL,
 	obj_desc varchar(200),
@@ -54,6 +55,7 @@ ALTER TABLE public."MAE_OBJETOS" OWNER TO postgres;
 
 -- object: public."ARB_LOGICO" | type: TABLE --
 DROP TABLE IF EXISTS public."ARB_LOGICO" CASCADE;
+TRUNCATE TABLE public."ARB_LOGICO" RESTART IDENTITY CASCADE;
 CREATE TABLE public."ARB_LOGICO"(
 	log_id integer NOT NULL,
 	log_id_padre integer,
@@ -72,6 +74,7 @@ ALTER TABLE public."ARB_LOGICO" OWNER TO postgres;
 
 -- object: public."ARB_FISICO" | type: TABLE --
 DROP TABLE IF EXISTS public."ARB_FISICO" CASCADE;
+TRUNCATE TABLE public."ARB_FISICO" RESTART IDENTITY CASCADE;
 CREATE TABLE public."ARB_FISICO"(
 	fis_id integer NOT NULL,
 	fis_id_padre integer,
@@ -90,6 +93,7 @@ ALTER TABLE public."ARB_FISICO" OWNER TO postgres;
 
 -- object: public."MAT_TIPO_OBJ" | type: TABLE --
 DROP TABLE IF EXISTS public."MAT_TIPO_OBJ" CASCADE;
+TRUNCATE TABLE public."MAT_TIPO_OBJ" RESTART IDENTITY CASCADE;
 CREATE TABLE public."MAT_TIPO_OBJ"(
 	tobj_id serial NOT NULL,
 	tobj_desc varchar(200),
@@ -129,6 +133,7 @@ ALTER TABLE public."MAT_TIPO_OBJ" OWNER TO postgres;
 
 -- object: public."MAE_CRON" | type: TABLE --
 DROP TABLE IF EXISTS public."MAE_CRON" CASCADE;
+TRUNCATE TABLE public."MAE_CRON" RESTART IDENTITY CASCADE;
 CREATE TABLE public."MAE_CRON"(
 	cron_id serial NOT NULL,
 	cron_tipo char(1),
@@ -157,6 +162,7 @@ ALTER TABLE public."MAE_CRON" OWNER TO postgres;
 
 -- object: public."TAB_EJECUCIONES" | type: TABLE --
 DROP TABLE IF EXISTS public."TAB_EJECUCIONES" CASCADE;
+TRUNCATE TABLE public."TAB_EJECUCIONES" RESTART IDENTITY CASCADE;
 CREATE TABLE public."TAB_EJECUCIONES"(
 	eje_id serial NOT NULL,
 	eje_fecha char(8),
@@ -179,6 +185,7 @@ ALTER TABLE public."TAB_EJECUCIONES" OWNER TO postgres;
 
 -- object: public."MAE_USUARIOS" | type: TABLE --
 DROP TABLE IF EXISTS public."MAE_USUARIOS" CASCADE;
+TRUNCATE TABLE public."MAE_USUARIOS" RESTART IDENTITY CASCADE;
 CREATE TABLE public."MAE_USUARIOS"(
 	usu_id serial NOT NULL,
 	usu_nombre varchar(300),
@@ -211,6 +218,7 @@ ALTER TABLE public."MAE_USUARIOS" OWNER TO postgres;
 
 -- object: public."MAE_TIPO_USU" | type: TABLE --
 DROP TABLE IF EXISTS public."MAE_TIPO_USU" CASCADE;
+TRUNCATE TABLE public."MAE_TIPO_USU" RESTART IDENTITY CASCADE;
 CREATE TABLE public."MAE_TIPO_USU"(
 	tusu_id serial NOT NULL,
 	tusu_desc varchar(200),
@@ -231,6 +239,7 @@ ALTER TABLE public."MAE_TIPO_USU" OWNER TO postgres;
 
 -- object: public."MAE_USU_ACCESOS_REPORTES" | type: TABLE --
 DROP TABLE IF EXISTS public."MAE_USU_ACCESOS_REPORTES" CASCADE;
+TRUNCATE TABLE public."MAE_USU_ACCESOS_REPORTES" RESTART IDENTITY CASCADE;
 CREATE TABLE public."MAE_USU_ACCESOS_REPORTES"(
 	urep_id serial NOT NULL,
 	rep_id integer,
@@ -245,6 +254,7 @@ ALTER TABLE public."MAE_USU_ACCESOS_REPORTES" OWNER TO postgres;
 
 -- object: public."TAB_REPORTES" | type: TABLE --
 DROP TABLE IF EXISTS public."TAB_REPORTES" CASCADE;
+TRUNCATE TABLE public."TAB_REPORTES" RESTART IDENTITY CASCADE;
 CREATE TABLE public."TAB_REPORTES"(
 	rep_id serial NOT NULL,
 	rep_desc varchar(200),
@@ -282,6 +292,7 @@ ALTER TABLE public."TAB_REPORTES" OWNER TO postgres;
 
 -- object: public."MAE_USU_ACCESOS_ARBOLES" | type: TABLE --
 DROP TABLE IF EXISTS public."MAE_USU_ACCESOS_ARBOLES" CASCADE;
+TRUNCATE TABLE public."MAE_USU_ACCESOS_ARBOLES" RESTART IDENTITY CASCADE;
 CREATE TABLE public."MAE_USU_ACCESOS_ARBOLES"(
 	uarb_id serial NOT NULL,
 	urep_id integer,
@@ -302,6 +313,7 @@ ALTER TABLE public."MAE_USU_ACCESOS_ARBOLES" OWNER TO postgres;
 
 -- object: public."MAE_CONSULTAS" | type: TABLE --
 DROP TABLE IF EXISTS public."MAE_CONSULTAS" CASCADE;
+TRUNCATE TABLE public."MAE_CONSULTAS" RESTART IDENTITY CASCADE;
 CREATE TABLE public."MAE_CONSULTAS"(
 	con_id serial NOT NULL,
 	con_desc varchar(100),
@@ -332,6 +344,7 @@ ALTER TABLE public."MAE_CONSULTAS" OWNER TO postgres;
 
 -- object: public."MAE_USUARIOS_ALERTAS" | type: TABLE --
 DROP TABLE IF EXISTS public."MAE_USUARIOS_ALERTAS" CASCADE;
+TRUNCATE TABLE public."MAE_USUARIOS" RESTART IDENTITY CASCADE;
 CREATE TABLE public."MAE_USUARIOS_ALERTAS"(
 	rep_id integer NOT NULL,
 	usu_id integer NOT NULL,
@@ -346,6 +359,7 @@ ALTER TABLE public."MAE_USUARIOS_ALERTAS" OWNER TO postgres;
 
 -- object: public."PARAM" | type: TABLE --
 DROP TABLE IF EXISTS public."PARAM" CASCADE;
+TRUNCATE TABLE public."PARAM" RESTART IDENTITY CASCADE;
 CREATE TABLE public."PARAM"(
 	obj_id serial NOT NULL,
 	param_grupo varchar(30) NOT NULL,
@@ -371,6 +385,7 @@ CREATE UNIQUE INDEX unique_param_val ON public."PARAM"
 
 -- object: public."PARAM_GRUPO" | type: TABLE --
 DROP TABLE IF EXISTS public."PARAM_GRUPO" CASCADE;
+TRUNCATE TABLE public."PARAM_GRUPO" RESTART IDENTITY CASCADE;
 CREATE TABLE public."PARAM_GRUPO"(
 	grupo_codigo varchar(30) NOT NULL,
 	grupo_nombre varchar(100) NOT NULL,
@@ -383,6 +398,7 @@ ALTER TABLE public."PARAM_GRUPO" OWNER TO postgres;
 
 -- object: public."LOG_SESIONES" | type: TABLE --
 DROP TABLE IF EXISTS public."LOG_SESIONES" CASCADE;
+TRUNCATE TABLE public."LOG_SESIONES" RESTART IDENTITY CASCADE;
 CREATE TABLE public."LOG_SESIONES"(
 	ses_id serial,
 	ses_token varchar(200),
@@ -404,6 +420,7 @@ ALTER TABLE public."LOG_SESIONES" OWNER TO postgres;
 
 -- object: public."TAB_MENU" | type: TABLE --
 DROP TABLE IF EXISTS public."TAB_MENU" CASCADE;
+TRUNCATE TABLE public."TAB_MENU" RESTART IDENTITY CASCADE;
 CREATE TABLE public."TAB_MENU"(
 	menu_id serial NOT NULL,
 	menu_desc varchar(500),
@@ -428,6 +445,7 @@ ALTER TABLE public."TAB_MENU" OWNER TO postgres;
 
 -- object: public."MAE_USUARIOS_MENU" | type: TABLE --
 DROP TABLE IF EXISTS public."MAE_USUARIOS_MENU" CASCADE;
+TRUNCATE TABLE public."MAE_USUARIOS_MENU" RESTART IDENTITY CASCADE;
 CREATE TABLE public."MAE_USUARIOS_MENU"(
 	umenu_id serial NOT NULL,
 	usu_id integer,
@@ -444,6 +462,7 @@ ALTER TABLE public."MAE_USUARIOS_MENU" OWNER TO postgres;
 
 -- object: public."MAE_OBJETO_FISICO" | type: TABLE --
 DROP TABLE IF EXISTS public."MAE_OBJETO_FISICO" CASCADE;
+TRUNCATE TABLE public."MAE_OBJETO_FISICO" RESTART IDENTITY CASCADE;
 CREATE TABLE public."MAE_OBJETO_FISICO"(
 	obj_id integer NOT NULL,
 	fid_id integer NOT NULL,
@@ -458,6 +477,7 @@ ALTER TABLE public."MAE_OBJETO_FISICO" OWNER TO postgres;
 
 -- object: public."MAE_OBJETO_LOGICO" | type: TABLE --
 DROP TABLE IF EXISTS public."MAE_OBJETO_LOGICO" CASCADE;
+TRUNCATE TABLE public."MAE_OBJETO_LOGICO" RESTART IDENTITY CASCADE;
 CREATE TABLE public."MAE_OBJETO_LOGICO"(
 	obj_id integer NOT NULL,
 	log_id integer NOT NULL,
@@ -472,6 +492,7 @@ ALTER TABLE public."MAE_OBJETO_LOGICO" OWNER TO postgres;
 
 -- object: public."MAE_IDIOMAS" | type: TABLE --
 DROP TABLE IF EXISTS public."MAE_IDIOMAS" CASCADE;
+TRUNCATE TABLE public."MAE_IDIOMAS" RESTART IDENTITY CASCADE;
 CREATE TABLE public."MAE_IDIOMAS"(
 	idi_id serial NOT NULL,
 	idi_desc varchar(100),
@@ -492,6 +513,7 @@ ALTER TABLE public."MAE_IDIOMAS" OWNER TO postgres;
 
 -- object: public."MAE_AREA" | type: TABLE --
 DROP TABLE IF EXISTS public."MAE_AREA" CASCADE;
+TRUNCATE TABLE public."MAE_AREA" RESTART IDENTITY CASCADE;
 CREATE TABLE public."MAE_AREA"(
 	area_id serial NOT NULL,
 	area_desc varchar(100),
@@ -512,6 +534,7 @@ ALTER TABLE public."MAE_AREA" OWNER TO postgres;
 
 -- object: public."TAB_PROTOCOLO" | type: TABLE --
 DROP TABLE IF EXISTS public."TAB_PROTOCOLO" CASCADE;
+TRUNCATE TABLE public."TAB_PROTOCOLO" RESTART IDENTITY CASCADE;
 CREATE TABLE public."TAB_PROTOCOLO"(
 	prot_id serial NOT NULL,
 	prot_desc varchar(10),
@@ -533,6 +556,7 @@ ALTER TABLE public."TAB_PROTOCOLO" OWNER TO postgres;
 
 -- object: public."MAE_MARCAS" | type: TABLE --
 DROP TABLE IF EXISTS public."MAE_MARCAS" CASCADE;
+TRUNCATE TABLE public."MAE_MARCAS" RESTART IDENTITY CASCADE;
 CREATE TABLE public."MAE_MARCAS"(
 	marca_id serial NOT NULL,
 	marca_desc varchar(100),
@@ -552,6 +576,7 @@ ALTER TABLE public."MAE_MARCAS" OWNER TO postgres;
 
 -- object: public."MAE_MODELO" | type: TABLE --
 DROP TABLE IF EXISTS public."MAE_MODELO" CASCADE;
+TRUNCATE TABLE public."MAE_MODELO" RESTART IDENTITY CASCADE;
 CREATE TABLE public."MAE_MODELO"(
 	mod_id serial NOT NULL,
 	mod_descripcion varchar(100),
@@ -573,6 +598,7 @@ ALTER TABLE public."MAE_MODELO" OWNER TO postgres;
 
 -- object: public."LOG_ACCIONES_USUARIO" | type: TABLE --
 DROP TABLE IF EXISTS public."LOG_ACCIONES_USUARIO" CASCADE;
+TRUNCATE TABLE public."LOG_ACCIONES_USUARIO" RESTART IDENTITY CASCADE;
 CREATE TABLE public."LOG_ACCIONES_USUARIO"(
 	log_id serial NOT NULL,
 	log_usu_id integer,
@@ -590,6 +616,7 @@ ALTER TABLE public."LOG_ACCIONES_USUARIO" OWNER TO postgres;
 
 -- object: public."TAB_ACCIONES" | type: TABLE --
 DROP TABLE IF EXISTS public."TAB_ACCIONES" CASCADE;
+TRUNCATE TABLE public."TAB_ACCIONES" RESTART IDENTITY CASCADE;
 CREATE TABLE public."TAB_ACCIONES"(
 	acc_id serial NOT NULL,
 	acc_desc varchar(50),
@@ -604,6 +631,7 @@ ALTER TABLE public."TAB_ACCIONES" OWNER TO postgres;
 
 -- object: public."TAB_EJECUCIONES_OBJETO" | type: TABLE --
 DROP TABLE IF EXISTS public."TAB_EJECUCIONES_OBJETO" CASCADE;
+TRUNCATE TABLE public."TAB_EJECUCIONES_OBJETO" RESTART IDENTITY CASCADE;
 CREATE TABLE public."TAB_EJECUCIONES_OBJETO"(
 	eobj_id serial NOT NULL,
 	eobj_cod varchar(100),
@@ -621,6 +649,7 @@ ALTER TABLE public."TAB_EJECUCIONES_OBJETO" OWNER TO postgres;
 
 -- object: public."MAE_SERVERS_PULL" | type: TABLE --
 DROP TABLE IF EXISTS public."MAE_SERVERS_PULL" CASCADE;
+TRUNCATE TABLE public."MAE_SERVERS_PULL" RESTART IDENTITY CASCADE;
 CREATE TABLE public."MAE_SERVERS_PULL"(
 	serv_id serial,
 	serv_ip varchar(20),
@@ -635,6 +664,7 @@ ALTER TABLE public."MAE_SERVERS_PULL" OWNER TO postgres;
 
 -- object: public."TAB_ERROR" | type: TABLE --
 DROP TABLE IF EXISTS public."TAB_ERROR" CASCADE;
+TRUNCATE TABLE public."TAB_ERROR" RESTART IDENTITY CASCADE;
 CREATE TABLE public."TAB_ERROR"(
 	cod_error integer NOT NULL,
 	idi_id integer NOT NULL,
