@@ -14,7 +14,7 @@
 -- 
 
 -- object: public."MAE_OBJETOS" | type: TABLE --
--- DROP TABLE IF EXISTS public."MAE_OBJETOS" CASCADE;
+DROP TABLE IF EXISTS public."MAE_OBJETOS" CASCADE;
 CREATE TABLE public."MAE_OBJETOS"(
 	obj_id serial NOT NULL,
 	obj_desc varchar(200),
@@ -53,7 +53,7 @@ ALTER TABLE public."MAE_OBJETOS" OWNER TO postgres;
 -- ddl-end --
 
 -- object: public."ARB_LOGICO" | type: TABLE --
--- DROP TABLE IF EXISTS public."ARB_LOGICO" CASCADE;
+DROP TABLE IF EXISTS public."ARB_LOGICO" CASCADE;
 CREATE TABLE public."ARB_LOGICO"(
 	log_id integer NOT NULL,
 	log_id_padre integer,
@@ -71,7 +71,7 @@ ALTER TABLE public."ARB_LOGICO" OWNER TO postgres;
 -- ddl-end --
 
 -- object: public."ARB_FISICO" | type: TABLE --
--- DROP TABLE IF EXISTS public."ARB_FISICO" CASCADE;
+DROP TABLE IF EXISTS public."ARB_FISICO" CASCADE;
 CREATE TABLE public."ARB_FISICO"(
 	fis_id integer NOT NULL,
 	fis_id_padre integer,
@@ -89,7 +89,7 @@ ALTER TABLE public."ARB_FISICO" OWNER TO postgres;
 -- ddl-end --
 
 -- object: public."MAT_TIPO_OBJ" | type: TABLE --
--- DROP TABLE IF EXISTS public."MAT_TIPO_OBJ" CASCADE;
+DROP TABLE IF EXISTS public."MAT_TIPO_OBJ" CASCADE;
 CREATE TABLE public."MAT_TIPO_OBJ"(
 	tobj_id serial NOT NULL,
 	tobj_desc varchar(200),
@@ -128,7 +128,7 @@ ALTER TABLE public."MAT_TIPO_OBJ" OWNER TO postgres;
 -- ddl-end --
 
 -- object: public."MAE_CRON" | type: TABLE --
--- DROP TABLE IF EXISTS public."MAE_CRON" CASCADE;
+DROP TABLE IF EXISTS public."MAE_CRON" CASCADE;
 CREATE TABLE public."MAE_CRON"(
 	cron_id serial NOT NULL,
 	cron_tipo char(1),
@@ -156,7 +156,7 @@ ALTER TABLE public."MAE_CRON" OWNER TO postgres;
 -- ddl-end --
 
 -- object: public."TAB_EJECUCIONES" | type: TABLE --
--- DROP TABLE IF EXISTS public."TAB_EJECUCIONES" CASCADE;
+DROP TABLE IF EXISTS public."TAB_EJECUCIONES" CASCADE;
 CREATE TABLE public."TAB_EJECUCIONES"(
 	eje_id serial NOT NULL,
 	eje_fecha char(8),
@@ -178,7 +178,7 @@ ALTER TABLE public."TAB_EJECUCIONES" OWNER TO postgres;
 -- ddl-end --
 
 -- object: public."MAE_USUARIOS" | type: TABLE --
--- DROP TABLE IF EXISTS public."MAE_USUARIOS" CASCADE;
+DROP TABLE IF EXISTS public."MAE_USUARIOS" CASCADE;
 CREATE TABLE public."MAE_USUARIOS"(
 	usu_id serial NOT NULL,
 	usu_nombre varchar(300),
@@ -210,7 +210,7 @@ ALTER TABLE public."MAE_USUARIOS" OWNER TO postgres;
 -- ddl-end --
 
 -- object: public."MAE_TIPO_USU" | type: TABLE --
--- DROP TABLE IF EXISTS public."MAE_TIPO_USU" CASCADE;
+DROP TABLE IF EXISTS public."MAE_TIPO_USU" CASCADE;
 CREATE TABLE public."MAE_TIPO_USU"(
 	tusu_id serial NOT NULL,
 	tusu_desc varchar(200),
@@ -230,7 +230,7 @@ ALTER TABLE public."MAE_TIPO_USU" OWNER TO postgres;
 -- ddl-end --
 
 -- object: public."MAE_USU_ACCESOS_REPORTES" | type: TABLE --
--- DROP TABLE IF EXISTS public."MAE_USU_ACCESOS_REPORTES" CASCADE;
+DROP TABLE IF EXISTS public."MAE_USU_ACCESOS_REPORTES" CASCADE;
 CREATE TABLE public."MAE_USU_ACCESOS_REPORTES"(
 	urep_id serial NOT NULL,
 	rep_id integer,
@@ -244,7 +244,7 @@ ALTER TABLE public."MAE_USU_ACCESOS_REPORTES" OWNER TO postgres;
 -- ddl-end --
 
 -- object: public."TAB_REPORTES" | type: TABLE --
--- DROP TABLE IF EXISTS public."TAB_REPORTES" CASCADE;
+DROP TABLE IF EXISTS public."TAB_REPORTES" CASCADE;
 CREATE TABLE public."TAB_REPORTES"(
 	rep_id serial NOT NULL,
 	rep_desc varchar(200),
@@ -281,7 +281,7 @@ ALTER TABLE public."TAB_REPORTES" OWNER TO postgres;
 -- ddl-end --
 
 -- object: public."MAE_USU_ACCESOS_ARBOLES" | type: TABLE --
--- DROP TABLE IF EXISTS public."MAE_USU_ACCESOS_ARBOLES" CASCADE;
+DROP TABLE IF EXISTS public."MAE_USU_ACCESOS_ARBOLES" CASCADE;
 CREATE TABLE public."MAE_USU_ACCESOS_ARBOLES"(
 	uarb_id serial NOT NULL,
 	urep_id integer,
@@ -301,7 +301,7 @@ ALTER TABLE public."MAE_USU_ACCESOS_ARBOLES" OWNER TO postgres;
 -- ddl-end --
 
 -- object: public."MAE_CONSULTAS" | type: TABLE --
--- DROP TABLE IF EXISTS public."MAE_CONSULTAS" CASCADE;
+DROP TABLE IF EXISTS public."MAE_CONSULTAS" CASCADE;
 CREATE TABLE public."MAE_CONSULTAS"(
 	con_id serial NOT NULL,
 	con_desc varchar(100),
@@ -331,7 +331,7 @@ ALTER TABLE public."MAE_CONSULTAS" OWNER TO postgres;
 -- ddl-end --
 
 -- object: public."MAE_USUARIOS_ALERTAS" | type: TABLE --
--- DROP TABLE IF EXISTS public."MAE_USUARIOS_ALERTAS" CASCADE;
+DROP TABLE IF EXISTS public."MAE_USUARIOS_ALERTAS" CASCADE;
 CREATE TABLE public."MAE_USUARIOS_ALERTAS"(
 	rep_id integer NOT NULL,
 	usu_id integer NOT NULL,
@@ -345,7 +345,7 @@ ALTER TABLE public."MAE_USUARIOS_ALERTAS" OWNER TO postgres;
 -- ddl-end --
 
 -- object: public."PARAM" | type: TABLE --
--- DROP TABLE IF EXISTS public."PARAM" CASCADE;
+DROP TABLE IF EXISTS public."PARAM" CASCADE;
 CREATE TABLE public."PARAM"(
 	obj_id serial NOT NULL,
 	param_grupo varchar(30) NOT NULL,
@@ -370,7 +370,7 @@ CREATE UNIQUE INDEX unique_param_val ON public."PARAM"
 -- ddl-end --
 
 -- object: public."PARAM_GRUPO" | type: TABLE --
--- DROP TABLE IF EXISTS public."PARAM_GRUPO" CASCADE;
+DROP TABLE IF EXISTS public."PARAM_GRUPO" CASCADE;
 CREATE TABLE public."PARAM_GRUPO"(
 	grupo_codigo varchar(30) NOT NULL,
 	grupo_nombre varchar(100) NOT NULL,
@@ -382,7 +382,7 @@ ALTER TABLE public."PARAM_GRUPO" OWNER TO postgres;
 -- ddl-end --
 
 -- object: public."LOG_SESIONES" | type: TABLE --
--- DROP TABLE IF EXISTS public."LOG_SESIONES" CASCADE;
+DROP TABLE IF EXISTS public."LOG_SESIONES" CASCADE;
 CREATE TABLE public."LOG_SESIONES"(
 	ses_id serial,
 	ses_token varchar(200),
@@ -403,11 +403,15 @@ ALTER TABLE public."LOG_SESIONES" OWNER TO postgres;
 -- ddl-end --
 
 -- object: public."TAB_MENU" | type: TABLE --
--- DROP TABLE IF EXISTS public."TAB_MENU" CASCADE;
+DROP TABLE IF EXISTS public."TAB_MENU" CASCADE;
 CREATE TABLE public."TAB_MENU"(
 	menu_id serial NOT NULL,
 	menu_desc varchar(500),
 	menu_name varchar(50),
+	menu_key varchar(50),
+	menu_padre integer,
+	menu_ruta varchar(40),
+	menu_cssclass varchar(40),
 	menu_ord integer,
 	CONSTRAINT "TAB_MENU_pk" PRIMARY KEY (menu_id)
 
@@ -423,7 +427,7 @@ ALTER TABLE public."TAB_MENU" OWNER TO postgres;
 -- ddl-end --
 
 -- object: public."MAE_USUARIOS_MENU" | type: TABLE --
--- DROP TABLE IF EXISTS public."MAE_USUARIOS_MENU" CASCADE;
+DROP TABLE IF EXISTS public."MAE_USUARIOS_MENU" CASCADE;
 CREATE TABLE public."MAE_USUARIOS_MENU"(
 	umenu_id serial NOT NULL,
 	usu_id integer,
@@ -439,7 +443,7 @@ ALTER TABLE public."MAE_USUARIOS_MENU" OWNER TO postgres;
 -- ddl-end --
 
 -- object: public."MAE_OBJETO_FISICO" | type: TABLE --
--- DROP TABLE IF EXISTS public."MAE_OBJETO_FISICO" CASCADE;
+DROP TABLE IF EXISTS public."MAE_OBJETO_FISICO" CASCADE;
 CREATE TABLE public."MAE_OBJETO_FISICO"(
 	obj_id integer NOT NULL,
 	fid_id integer NOT NULL,
@@ -453,7 +457,7 @@ ALTER TABLE public."MAE_OBJETO_FISICO" OWNER TO postgres;
 -- ddl-end --
 
 -- object: public."MAE_OBJETO_LOGICO" | type: TABLE --
--- DROP TABLE IF EXISTS public."MAE_OBJETO_LOGICO" CASCADE;
+DROP TABLE IF EXISTS public."MAE_OBJETO_LOGICO" CASCADE;
 CREATE TABLE public."MAE_OBJETO_LOGICO"(
 	obj_id integer NOT NULL,
 	log_id integer NOT NULL,
@@ -467,7 +471,7 @@ ALTER TABLE public."MAE_OBJETO_LOGICO" OWNER TO postgres;
 -- ddl-end --
 
 -- object: public."MAE_IDIOMAS" | type: TABLE --
--- DROP TABLE IF EXISTS public."MAE_IDIOMAS" CASCADE;
+DROP TABLE IF EXISTS public."MAE_IDIOMAS" CASCADE;
 CREATE TABLE public."MAE_IDIOMAS"(
 	idi_id serial NOT NULL,
 	idi_desc varchar(100),
@@ -487,7 +491,7 @@ ALTER TABLE public."MAE_IDIOMAS" OWNER TO postgres;
 -- ddl-end --
 
 -- object: public."MAE_AREA" | type: TABLE --
--- DROP TABLE IF EXISTS public."MAE_AREA" CASCADE;
+DROP TABLE IF EXISTS public."MAE_AREA" CASCADE;
 CREATE TABLE public."MAE_AREA"(
 	area_id serial NOT NULL,
 	area_desc varchar(100),
@@ -507,7 +511,7 @@ ALTER TABLE public."MAE_AREA" OWNER TO postgres;
 -- ddl-end --
 
 -- object: public."TAB_PROTOCOLO" | type: TABLE --
--- DROP TABLE IF EXISTS public."TAB_PROTOCOLO" CASCADE;
+DROP TABLE IF EXISTS public."TAB_PROTOCOLO" CASCADE;
 CREATE TABLE public."TAB_PROTOCOLO"(
 	prot_id serial NOT NULL,
 	prot_desc varchar(10),
@@ -528,7 +532,7 @@ ALTER TABLE public."TAB_PROTOCOLO" OWNER TO postgres;
 -- ddl-end --
 
 -- object: public."MAE_MARCAS" | type: TABLE --
--- DROP TABLE IF EXISTS public."MAE_MARCAS" CASCADE;
+DROP TABLE IF EXISTS public."MAE_MARCAS" CASCADE;
 CREATE TABLE public."MAE_MARCAS"(
 	marca_id serial NOT NULL,
 	marca_desc varchar(100),
@@ -547,7 +551,7 @@ ALTER TABLE public."MAE_MARCAS" OWNER TO postgres;
 -- ddl-end --
 
 -- object: public."MAE_MODELO" | type: TABLE --
--- DROP TABLE IF EXISTS public."MAE_MODELO" CASCADE;
+DROP TABLE IF EXISTS public."MAE_MODELO" CASCADE;
 CREATE TABLE public."MAE_MODELO"(
 	mod_id serial NOT NULL,
 	mod_descripcion varchar(100),
@@ -568,12 +572,12 @@ ALTER TABLE public."MAE_MODELO" OWNER TO postgres;
 -- ddl-end --
 
 -- object: public."LOG_ACCIONES_USUARIO" | type: TABLE --
--- DROP TABLE IF EXISTS public."LOG_ACCIONES_USUARIO" CASCADE;
+DROP TABLE IF EXISTS public."LOG_ACCIONES_USUARIO" CASCADE;
 CREATE TABLE public."LOG_ACCIONES_USUARIO"(
 	log_id serial NOT NULL,
 	log_usu_id integer,
 	log_fecha_hora timestamp DEFAULT now(),
-	log_desc varchar(100),
+	log_desc varchar(50),
 	log_acc_id integer,
 	CONSTRAINT "LOG_ACCIONES_USUARIO_PK" PRIMARY KEY (log_id)
 
@@ -585,7 +589,7 @@ ALTER TABLE public."LOG_ACCIONES_USUARIO" OWNER TO postgres;
 -- ddl-end --
 
 -- object: public."TAB_ACCIONES" | type: TABLE --
--- DROP TABLE IF EXISTS public."TAB_ACCIONES" CASCADE;
+DROP TABLE IF EXISTS public."TAB_ACCIONES" CASCADE;
 CREATE TABLE public."TAB_ACCIONES"(
 	acc_id serial NOT NULL,
 	acc_desc varchar(50),
@@ -599,7 +603,7 @@ ALTER TABLE public."TAB_ACCIONES" OWNER TO postgres;
 -- ddl-end --
 
 -- object: public."TAB_EJECUCIONES_OBJETO" | type: TABLE --
--- DROP TABLE IF EXISTS public."TAB_EJECUCIONES_OBJETO" CASCADE;
+DROP TABLE IF EXISTS public."TAB_EJECUCIONES_OBJETO" CASCADE;
 CREATE TABLE public."TAB_EJECUCIONES_OBJETO"(
 	eobj_id serial NOT NULL,
 	eobj_cod varchar(100),
@@ -616,7 +620,7 @@ ALTER TABLE public."TAB_EJECUCIONES_OBJETO" OWNER TO postgres;
 -- ddl-end --
 
 -- object: public."MAE_SERVERS_PULL" | type: TABLE --
--- DROP TABLE IF EXISTS public."MAE_SERVERS_PULL" CASCADE;
+DROP TABLE IF EXISTS public."MAE_SERVERS_PULL" CASCADE;
 CREATE TABLE public."MAE_SERVERS_PULL"(
 	serv_id serial,
 	serv_ip varchar(20),
@@ -627,6 +631,19 @@ CREATE TABLE public."MAE_SERVERS_PULL"(
 COMMENT ON TABLE public."MAE_SERVERS_PULL" IS 'Tabla que detalla los servidores que harán pull a la data de los objetos';
 -- ddl-end --
 ALTER TABLE public."MAE_SERVERS_PULL" OWNER TO postgres;
+-- ddl-end --
+
+-- object: public."TAB_ERROR" | type: TABLE --
+DROP TABLE IF EXISTS public."TAB_ERROR" CASCADE;
+CREATE TABLE public."TAB_ERROR"(
+	cod_error integer NOT NULL,
+	idi_id integer NOT NULL,
+	mensaje varchar(100),
+	CONSTRAINT "TAB_ERROR_pk" PRIMARY KEY (cod_error,idi_id)
+
+);
+-- ddl-end --
+ALTER TABLE public."TAB_ERROR" OWNER TO postgres;
 -- ddl-end --
 
 -- object: "FK_MAE_TIPO_OBJ" | type: CONSTRAINT --
@@ -878,6 +895,13 @@ ON DELETE NO ACTION ON UPDATE NO ACTION;
 -- ALTER TABLE public."MAE_SERVERS_PULL" DROP CONSTRAINT IF EXISTS "FLK_MAE_SERVERS_PULL_ARB_LOGICO" CASCADE;
 ALTER TABLE public."MAE_SERVERS_PULL" ADD CONSTRAINT "FLK_MAE_SERVERS_PULL_ARB_LOGICO" FOREIGN KEY (log_id)
 REFERENCES public."ARB_LOGICO" (log_id) MATCH FULL
+ON DELETE NO ACTION ON UPDATE NO ACTION;
+-- ddl-end --
+
+-- object: "FK_TAB_ERROR_MAE_IDIOMAS" | type: CONSTRAINT --
+-- ALTER TABLE public."TAB_ERROR" DROP CONSTRAINT IF EXISTS "FK_TAB_ERROR_MAE_IDIOMAS" CASCADE;
+ALTER TABLE public."TAB_ERROR" ADD CONSTRAINT "FK_TAB_ERROR_MAE_IDIOMAS" FOREIGN KEY (idi_id)
+REFERENCES public."MAE_IDIOMAS" (idi_id) MATCH FULL
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 -- ddl-end --
 
