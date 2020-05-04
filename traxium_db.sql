@@ -603,7 +603,7 @@ CREATE TABLE public."LOG_ACCIONES_USUARIO"(
 	log_id serial NOT NULL,
 	log_usu_id integer,
 	log_fecha_hora timestamp DEFAULT now(),
-	log_desc varchar(50),
+	log_desc varchar(100),
 	log_acc_id integer,
 	CONSTRAINT "LOG_ACCIONES_USUARIO_PK" PRIMARY KEY (log_id)
 
