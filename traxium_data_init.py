@@ -54,7 +54,7 @@ data_menu = [
 ('Permiso para area','Areas','MN_AREA',3,'areas','',14),
 ('Permiso para idiomas','Idiomas','MN_IDI',3,'idiomas','',13),
 ('Permiso para modelos','Modelos','MN_MOD',3,'modelo','',9),
-('Permiso para menu de usuarios','Usuarios Menu','MN_USUMEN',3,'usu-menu','',3),
+('Permiso para menu de usuarios','Usuarios Menu','MN_USUMEN',3,'user_menu','',3),
 ('Permiso para menus',',Menu','MN_MEN',3,'menu','',22),
 ('Permiso para protocolos','Protocolos','MN_PROT',3,'protocolo','',10),
 ('Permiso para acciones','Acciones','MN_ACC',3,'acciones','',21),
